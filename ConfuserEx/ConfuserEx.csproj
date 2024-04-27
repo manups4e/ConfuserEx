@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <UseWPF>true</UseWPF>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\ConfuserEx.snk</AssemblyOriginatorKeyFile>
@@ -18,7 +18,7 @@
 
   <ItemGroup Label="Nuget Dependencies">
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="4.0.0" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
   </ItemGroup>
   
   <ItemGroup Label="Project Dependencies">
@@ -35,4 +35,15 @@
 
   <Import Project="..\ConfuserEx.Common.targets" Condition="Exists('..\ConfuserEx.Common.targets')" />
 
+  <Target Name="BuildAddition" AfterTargets="Build">
+    <ItemGroup>
+      <ProjectsToBuild Include="..\Confuser.CLI\Confuser.CLI.csproj" />
+      <ProjectsToBuild Include="..\Additions\ConfuserEx.Additions.csproj" />
+    </ItemGroup>
+    <MSBuild Projects="@(ProjectsToBuild)" Properties="Configuration=$(Configuration)" Targets="Build">
+      <!--<Output ItemName="ContentFiles" TaskParameter="TargetOutputs"/>-->
+    </MSBuild>
+    <!--<Message Text="@(ContentFiles->'%(RelativeDir)')"/>-->
+  </Target>
+  <Import Project="NuGet\Nupkg.targets" Condition="Exists('NuGet\Nupkg.targets')" />
 </Project>

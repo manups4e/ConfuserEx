@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InvalidMetadataProtectionName" xml:space="preserve">
+    <value>Invalid Metadata Protection</value>
+  </data>
+  <data name="InvalidMetadataProtectionDescription" xml:space="preserve">
+    <value>This protection adds invalid metadata to modules to prevent disassembler/decompiler from opening them.</value>
+  </data>
+  <data name="InvalidMetadataProtectionInvalidMDPhaseName" xml:space="preserve">
+    <value>Invalid metadata addition</value>
+  </data>
+  <data name="HardeningProtectionName" xml:space="preserve">
+    <value>Protection Hardening</value>
+  </data>
+  <data name="AntiILDasmProtectionDescription" xml:space="preserve">
+    <value>This protection marks the module with a attribute that discourage ILDasm from disassembling it.</value>
+  </data>
+  <data name="AntiDumpProtectionName" xml:space="preserve">
+    <value>Hardening Phase</value>
+  </data>
+  <data name="HardeningPhaseName" xml:space="preserve">
+    <value>Hardening Phase</value>
+  </data>
+  <data name="AntiILDasmPhaseName" xml:space="preserve">
+    <value>Anti-ILDasm marking</value>
+  </data>
+  <data name="HardeningProtectionDescription" xml:space="preserve">
+    <value>This component improves the protection code, making it harder to circumvent it.</value>
+  </data>
+  <data name="AntiDumpProtectionDescription" xml:space="preserve">
+    <value>This protection prevents the assembly from being dumped from memory.</value>
+  </data>
+  <data name="AntiDebugProtectionName" xml:space="preserve">
+    <value>Anti Debug Protection</value>
+  </data>
+  <data name="AntiDebugProtectionDescription" xml:space="preserve">
+    <value>This protection prevents the assembly from being debugged or profiled.</value>
+  </data>
+  <data name="AntiDebugProtectionAntiDebugPhaseName" xml:space="preserve">
+    <value>Anti-debug injection</value>
+  </data>
+  <data name="AntiTamperProtectionName" xml:space="preserve">
+    <value>Anti Tamper Protection</value>
+  </data>
+  <data name="AntiTamperProtectionDescription" xml:space="preserve">
+    <value>This protection ensures the integrity of application.</value>
+  </data>
+  <data name="AntiTamperProtectionInjectPhaseName" xml:space="preserve">
+    <value>Anti-tamper helpers injection</value>
+  </data>
+  <data name="StubProtectionName" xml:space="preserve">
+    <value>Compressor Stub Protection</value>
+  </data>
+  <data name="StubProtectionDescription" xml:space="preserve">
+    <value>Do some extra works on the protected stub.</value>
+  </data>
+  <data name="StubProtectionInjPhaseName" xml:space="preserve">
+    <value>Module injection</value>
+  </data>
+  <data name="StubProtectionSigPhaseName" xml:space="preserve">
+    <value>Packer info encoding</value>
+  </data>
+  <data name="ConstantProtectionName" xml:space="preserve">
+    <value>Constants Protection</value>
+  </data>
+  <data name="ConstantProtectionDescription" xml:space="preserve">
+    <value>This protection encodes and compresses constants in the code.</value>
+  </data>
+  <data name="ControlFlowProtectionName" xml:space="preserve">
+    <value>Control Flow Protection</value>
+  </data>
+  <data name="ControlFlowProtectionDescription" xml:space="preserve">
+    <value>This protection mangles the code in the methods so that decompilers cannot decompile the methods.</value>
+  </data>
+  <data name="ReferenceProxyProtectionName" xml:space="preserve">
+    <value>Reference Proxy Protection</value>
+  </data>
+  <data name="ReferenceProxyProtectionDescription" xml:space="preserve">
+    <value>This protection encodes and hides references to type/method/fields.</value>
+  </data>
+  <data name="ResourceProtectionName" xml:space="preserve">
+    <value>Resources Protection</value>
+  </data>
+  <data name="ResourceProtectionDescription" xml:space="preserve">
+    <value>This protection encodes and compresses the embedded resources.</value>
+  </data>
+  <data name="TypeScrambleProtectionName" xml:space="preserve">
+    <value>Type Scrambler</value>
+  </data>
+  <data name="TypeScrambleProtectionDescription" xml:space="preserve">
+    <value>Replaces types with generics</value>
+  </data>
+  <data name="ScramblePhaseName" xml:space="preserve">
+    <value>Type scrambler</value>
+  </data>
+  <data name="AnalyzePhaseName" xml:space="preserve">
+    <value>Type scanner</value>
+  </data>
+  <data name="MDPhase_EncryptingResourcesText" xml:space="preserve">
+    <value>Encrypting resources...</value>
+  </data>
+  <data name="InjectPhaseName" xml:space="preserve">
+    <value>Resource encryption helpers injection</value>
+  </data>
+  <data name="ReferenceProxyPhaseName" xml:space="preserve">
+    <value>Encoding reference proxies</value>
+  </data>
+  <data name="ControlFlowPhaseName" xml:space="preserve">
+    <value>Control flow mangling</value>
+  </data>
+  <data name="InjectPhaseConstantName" xml:space="preserve">
+    <value>Constant encryption helpers injection</value>
+  </data>
+  <data name="EncodePhaseConstantsName" xml:space="preserve">
+    <value>Constants encoding</value>
+  </data>
+  <data name="ExtractPhaseName" xml:space="preserve">
+    <value>Packer info extraction</value>
+  </data>
+  <data name="AntiILDasmProtectionName" xml:space="preserve">
+    <value>Anti IL Dasm Protection</value>
+  </data>
+  <data name="AntiDumpPhase_Name" xml:space="preserve">
+    <value>Anti-dump injection</value>
+  </data>
+  <data name="MDPhase_Name" xml:space="preserve">
+    <value>Anti-tamper metadata preparation</value>
+  </data>
+  <data name="CompressorName" xml:space="preserve">
+    <value>Compressing Packer</value>
+  </data>
+  <data name="CompressorDescription" xml:space="preserve">
+    <value>This packer reduces the size of output.</value>
+  </data>
+  <data name="Compressor_Pack_No_executable_module" xml:space="preserve">
+    <value>No executable module!</value>
+  </data>
+  <data name="Compressor_InjectStub_Encrypting_modules" xml:space="preserve">
+    <value>Encrypting modules...</value>
+  </data>
+</root>

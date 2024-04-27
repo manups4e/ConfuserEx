@@ -5,8 +5,20 @@
              xmlns:core="clr-namespace:Confuser.Core;assembly=Confuser.Core">
     <ComboBox ItemsSource="{Binding Components, ElementName=Root}"
               SelectedItem="{Binding SelectedComponent, ElementName=Root}"
-              DisplayMemberPath="Id" FontFamily="Consolas"
+               FontFamily="Consolas"
               ScrollViewer.CanContentScroll="False">
+        <ComboBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}{0} - {1}">
+                            <Binding Path="Id"/>
+                            <Binding Path="Name"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
         <ComboBox.ItemContainerStyle>
             <Style TargetType="{x:Type ComboBoxItem}">
                 <Setter Property="OverridesDefaultStyle" Value="True" />

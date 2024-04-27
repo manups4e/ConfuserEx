@@ -13,11 +13,11 @@ namespace Confuser.Protections {
 		public const string _FullId = "Ki.InvalidMD";
 
 		public override string Name {
-			get { return "Invalid Metadata Protection"; }
+			get { return Properties.Resources.InvalidMetadataProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection adds invalid metadata to modules to prevent disassembler/decompiler from opening them."; }
+			get { return Properties.Resources.InvalidMetadataProtectionDescription; }
 		}
 
 		public override string Id {
@@ -51,7 +51,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Invalid metadata addition"; }
+				get { return Properties.Resources.InvalidMetadataProtectionInvalidMDPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

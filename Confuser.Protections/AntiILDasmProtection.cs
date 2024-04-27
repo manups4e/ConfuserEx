@@ -9,11 +9,11 @@ namespace Confuser.Protections {
 		public const string _FullId = "Ki.AntiILDasm";
 
 		public override string Name {
-			get { return "Anti IL Dasm Protection"; }
+			get { return Properties.Resources.AntiILDasmProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection marks the module with a attribute that discourage ILDasm from disassembling it."; }
+			get { return Properties.Resources.AntiILDasmProtectionDescription; }
 		}
 
 		public override string Id {
@@ -45,7 +45,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Anti-ILDasm marking"; }
+				get { return Properties.Resources.AntiILDasmPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

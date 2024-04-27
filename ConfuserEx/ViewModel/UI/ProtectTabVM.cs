@@ -7,17 +7,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using Confuser.Core;
 using Confuser.Core.Project;
+using ConfuserEx.Properties;
 using GalaSoft.MvvmLight.CommandWpf;
 
 namespace ConfuserEx.ViewModel {
 	internal class ProtectTabVM : TabViewModel, ILogger {
 		readonly Paragraph documentContent;
 		CancellationTokenSource cancelSrc;
-		double? progress = 0;
+		double progress = 0;
 		bool? result;
 
 		public ProtectTabVM(AppVM app)
-			: base(app, "Protect!") {
+			: base(app, Resources.ProtectTabHeaderText) {
 			documentContent = new Paragraph();
 			LogDocument = new FlowDocument();
 			LogDocument.Blocks.Add(documentContent);
@@ -31,7 +32,7 @@ namespace ConfuserEx.ViewModel {
 			get { return new RelayCommand(DoCancel, () => App.NavigationDisabled); }
 		}
 
-		public double? Progress {
+		public double Progress {
 			get { return progress; }
 			set { SetProperty(ref progress, value, "Progress"); }
 		}
@@ -53,7 +54,7 @@ namespace ConfuserEx.ViewModel {
 			documentContent.Inlines.Clear();
 			cancelSrc = new CancellationTokenSource();
 			Result = null;
-			Progress = null;
+			Progress = 0;
 			begin = DateTime.Now;
 			App.NavigationDisabled = true;
 
@@ -128,20 +129,20 @@ namespace ConfuserEx.ViewModel {
 		}
 
 		void ILogger.EndProgress() {
-			Progress = null;
+			Progress = 0;
 		}
 
 		void ILogger.Finish(bool successful) {
 			DateTime now = DateTime.Now;
 			string timeString = string.Format(
-				"at {0}, {1}:{2:d2} elapsed.",
+				Resources.ProtectTabVM_Finish_at_elapsed,
 				now.ToShortTimeString(),
 				(int)now.Subtract(begin).TotalMinutes,
 				now.Subtract(begin).Seconds);
 			if (successful)
-				AppendLine("Finished {0}", Brushes.Lime, timeString);
+				AppendLine(Resources.ProtectTabVM_Finish_Finished, Brushes.Lime, timeString);
 			else
-				AppendLine("Failed {0}", Brushes.Red, timeString);
+				AppendLine(Resources.ProtectTabVM_Finish_Failed, Brushes.Red, timeString);
 			Result = successful;
 		}
 

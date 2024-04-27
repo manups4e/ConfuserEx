@@ -18,11 +18,11 @@ namespace Confuser.Protections.Compress {
 		}
 
 		public override string Name {
-			get { return "Compressor Stub Protection"; }
+			get { return Properties.Resources.StubProtectionName; }
 		}
 
 		public override string Description {
-			get { return "Do some extra works on the protected stub."; }
+			get { return Properties.Resources.StubProtectionDescription; }
 		}
 
 		public override string Id {
@@ -60,7 +60,7 @@ namespace Confuser.Protections.Compress {
 			}
 
 			public override string Name {
-				get { return "Module injection"; }
+				get { return Properties.Resources.StubProtectionInjPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {
@@ -80,7 +80,7 @@ namespace Confuser.Protections.Compress {
 			}
 
 			public override string Name {
-				get { return "Packer info encoding"; }
+				get { return Properties.Resources.StubProtectionSigPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

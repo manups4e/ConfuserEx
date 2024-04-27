@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WatermarkingProtectionName" xml:space="preserve">
+    <value>Watermarking</value>
+  </data>
+  <data name="WatermarkingProtectionDescription" xml:space="preserve">
+    <value>This applies a watermark to the assembly, showing that ConfuserEx protected the assembly. So people try to reverse the obfuscation know to just give up.</value>
+  </data>
+  <data name="WatermarkingPhase_Name" xml:space="preserve">
+    <value>Apply watermark</value>
+  </data>
+  <data name="ProtectionPipeline_ExecuteStage_Executing" xml:space="preserve">
+    <value>Executing '{0}' phase...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Initializing" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Discovering_plugins" xml:space="preserve">
+    <value>Discovering plugins...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Discovered__protections" xml:space="preserve">
+    <value>Discovered {0} protections, {1} packers.</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Resolving_component_dependency" xml:space="preserve">
+    <value>Resolving component dependency...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Loading_input_modules" xml:space="preserve">
+    <value>Loading input modules...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Error_occured_during_initialization" xml:space="preserve">
+    <value>Error occured during initialization of '{0}'.</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Building_pipeline" xml:space="preserve">
+    <value>Building pipeline...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Operation_cancelled" xml:space="preserve">
+    <value>Operation cancelled.</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Unknown_error_occurred" xml:space="preserve">
+    <value>Unknown error occurred.</value>
+  </data>
+  <data name="ConfuserEngine_RunPipeline_Done" xml:space="preserve">
+    <value>Done.</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Resolving_dependencies" xml:space="preserve">
+    <value>Resolving dependencies...</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Failed_to_resolve_dependency" xml:space="preserve">
+    <value>Failed to resolve dependency of '{0}'</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Checking_Strong_Name" xml:space="preserve">
+    <value>Checking Strong Name...</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Creating_global__cctors" xml:space="preserve">
+    <value>Creating global .cctors...</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_module" xml:space="preserve">
+    <value>Processing module '{0}'...</value>
+  </data>
+  <data name="ConfuserEngine_WriteModule_Writing_module" xml:space="preserve">
+    <value>Writing module '{0}'...</value>
+  </data>
+  <data name="ConfuserEngine_Debug_Finalizing" xml:space="preserve">
+    <value>Finalizing...</value>
+  </data>
+  <data name="ConfuserEngine_Pack_Packing" xml:space="preserve">
+    <value>Packing...</value>
+  </data>
+  <data name="ConfuserEngine_SaveModules_Saving_to" xml:space="preserve">
+    <value>Saving to '{0}'...</value>
+  </data>
+  <data name="ConfuserEngine_PrintInfo_Protecting_packer_stub" xml:space="preserve">
+    <value>Protecting packer stub...</value>
+  </data>
+  <data name="ConfuserEngine_PrintEnvironmentInfo_Cached_assemblies" xml:space="preserve">
+    <value>Cached assemblies:</value>
+  </data>
+  <data name="WatermarkingPhase_Execute_Watermarking" xml:space="preserve">
+    <value>Watermarking...</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName1" xml:space="preserve">
+    <value>[{0}] SN Key or SN public Key is not provided for a signed module, the output may not be working.</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName2" xml:space="preserve">
+    <value>[{0}] SN Key or SN public Key is provided for an unsigned module, the output may not be working.</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName3" xml:space="preserve">
+    <value>[{0}] Provided SN public Key and signed module's public key do not match, the output may not be working.</value>
+  </data>
+  <data name="ObfAttrMarker_MarkProject_Loading" xml:space="preserve">
+    <value>Loading '{0}'...</value>
+  </data>
+  <data name="Marker_MarkProject_Loading" xml:space="preserve">
+    <value>Loading '{0}'...</value>
+  </data>
+  <data name="ConfuserEngine_PrintInfo_Running_on" xml:space="preserve">
+    <value>Running on {0}, {1}, {2} bits</value>
+  </data>
+  <data name="ConfuserEngine_PrintEnvironmentInfo_Installed_Framework_Versions" xml:space="preserve">
+    <value>Installed Framework Versions:</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_plugin" xml:space="preserve">
+    <value>Failed to load plugin '{0}'.</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_protection" xml:space="preserve">
+    <value>Failed to instantiate protection '{0}'.</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_packer" xml:space="preserve">
+    <value>Failed to instantiate packer '{0}'.</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_component" xml:space="preserve">
+    <value>Failed to instantiate component '{0}'.</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_built_in_protections" xml:space="preserve">
+    <value>Failed to load built-in protections.</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_renamer" xml:space="preserve">
+    <value>Failed to load renamer.</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_dynamic_cipher_library" xml:space="preserve">
+    <value>Failed to load dynamic cipher library.</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_StrongName" xml:space="preserve">
+    <value>Processing strong name...</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_DelayedStrongName" xml:space="preserve">
+    <value>Module {0} has been delayed the strong name.</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_PEHeaders" xml:space="preserve">
+    <value>Write PE header...</value>
+  </data>
+</root>

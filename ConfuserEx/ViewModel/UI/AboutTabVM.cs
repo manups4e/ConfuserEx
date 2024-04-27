@@ -3,12 +3,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using ConfuserEx.Properties;
 using GalaSoft.MvvmLight.CommandWpf;
 
 namespace ConfuserEx.ViewModel {
 	internal class AboutTabVM : TabViewModel {
 		public AboutTabVM(AppVM app)
-			: base(app, "About") {
+			: base(app, Resources.AboutTabHeaderText) {
 			var decoder = new IconBitmapDecoder(new Uri("pack://application:,,,/ConfuserEx.ico"), BitmapCreateOptions.DelayCreation, BitmapCacheOption.OnDemand);
 
 			Icon = decoder.Frames.First(frame => frame.Width == 64);

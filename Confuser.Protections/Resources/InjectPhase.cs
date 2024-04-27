@@ -21,7 +21,7 @@ namespace Confuser.Protections.Resources {
 		}
 
 		public override string Name {
-			get { return "Resource encryption helpers injection"; }
+			get { return Properties.Resources.InjectPhaseName; }
 		}
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

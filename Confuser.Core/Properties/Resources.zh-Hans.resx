@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WatermarkingProtectionDescription" xml:space="preserve">
+    <value>这将水印应用于程序集，表明ConfuserEx保护了程序集。</value>
+  </data>
+  <data name="WatermarkingProtectionName" xml:space="preserve">
+    <value>水印</value>
+  </data>
+  <data name="ProtectionPipeline_ExecuteStage_Executing" xml:space="preserve">
+    <value>正在执行“ {0}” 阶段...</value>
+  </data>
+  <data name="WatermarkingPhase_Name" xml:space="preserve">
+    <value>应用水印</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Discovering_plugins" xml:space="preserve">
+    <value>发现插件...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Discovered__protections" xml:space="preserve">
+    <value>发现{0}个保护模块， {1}个压缩打包模块.</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Resolving_component_dependency" xml:space="preserve">
+    <value>解析组件依赖...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Loading_input_modules" xml:space="preserve">
+    <value>加载输入模块...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Initializing" xml:space="preserve">
+    <value>正在初始化...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Operation_cancelled" xml:space="preserve">
+    <value>操作取消。</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Unknown_error_occurred" xml:space="preserve">
+    <value>出现未知错误。</value>
+  </data>
+  <data name="ConfuserEngine_RunPipeline_Done" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Resolving_dependencies" xml:space="preserve">
+    <value>解析依赖项...</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Checking_Strong_Name" xml:space="preserve">
+    <value>检查强名称...</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Creating_global__cctors" xml:space="preserve">
+    <value>创建全局.cctors...</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_module" xml:space="preserve">
+    <value>处理模块 '{0}'...</value>
+  </data>
+  <data name="ConfuserEngine_WriteModule_Writing_module" xml:space="preserve">
+    <value>写入模块 "{0}"...</value>
+  </data>
+  <data name="ConfuserEngine_Pack_Packing" xml:space="preserve">
+    <value>打包中...</value>
+  </data>
+  <data name="ConfuserEngine_PrintEnvironmentInfo_Cached_assemblies" xml:space="preserve">
+    <value>缓存程序集：</value>
+  </data>
+  <data name="ConfuserEngine_SaveModules_Saving_to" xml:space="preserve">
+    <value>保存到 "{0}"...</value>
+  </data>
+  <data name="ConfuserEngine_Debug_Finalizing" xml:space="preserve">
+    <value>正在完成...</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Error_occured_during_initialization" xml:space="preserve">
+    <value>初始化“{0}”时出错。</value>
+  </data>
+  <data name="ConfuserEngine_RunInternal_Building_pipeline" xml:space="preserve">
+    <value>正在生成管道...</value>
+  </data>
+  <data name="ConfuserEngine_PrintInfo_Protecting_packer_stub" xml:space="preserve">
+    <value>保护打包器子程序...</value>
+  </data>
+  <data name="ConfuserEngine_Inspection_Failed_to_resolve_dependency" xml:space="preserve">
+    <value>无法解析“{0}”的依赖项</value>
+  </data>
+  <data name="WatermarkingPhase_Execute_Watermarking" xml:space="preserve">
+    <value>生成水印中...</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName1" xml:space="preserve">
+    <value>[{0}] SN 密钥或 SN 公钥未为签名模块提供，输出模块可能无法正常运行。</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName2" xml:space="preserve">
+    <value>[{0}] SN 密钥或 SN 公钥为未签名的模块提供，输出模块可能无法正常运行。</value>
+  </data>
+  <data name="ConfuserEngine_CheckStrongName3" xml:space="preserve">
+    <value>[{0}] 如果 SN 公钥和签名模块的公钥不匹配，输出模块可能无法正常运行。</value>
+  </data>
+  <data name="ObfAttrMarker_MarkProject_Loading" xml:space="preserve">
+    <value>加载中 “{0}” ...</value>
+  </data>
+  <data name="Marker_MarkProject_Loading" xml:space="preserve">
+    <value>加载中 “{0}” ...</value>
+  </data>
+  <data name="ConfuserEngine_PrintInfo_Running_on" xml:space="preserve">
+    <value>运行在 {0}， {1}， {2}位</value>
+  </data>
+  <data name="ConfuserEngine_PrintEnvironmentInfo_Installed_Framework_Versions" xml:space="preserve">
+    <value>已安装.NET框架版本：</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_plugin" xml:space="preserve">
+    <value>无法加载插件 "{0}"！</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_dynamic_cipher_library" xml:space="preserve">
+    <value>无法加载动态密码库！</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_protection" xml:space="preserve">
+    <value>实例化保护模块“{0}”失败！</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_packer" xml:space="preserve">
+    <value>实例化压缩打包模块“{0}”失败！</value>
+  </data>
+  <data name="PluginDiscovery_AddPlugins_Failed_to_instantiate_component" xml:space="preserve">
+    <value>实例化组件“{0}”失败！</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_built_in_protections" xml:space="preserve">
+    <value>无法加载内置保护模块！</value>
+  </data>
+  <data name="PluginDiscovery_GetPluginsInternal_Failed_to_load_renamer" xml:space="preserve">
+    <value>无法加载重命名模块！</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_StrongName" xml:space="preserve">
+    <value>正在处理强签名...</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_DelayedStrongName" xml:space="preserve">
+    <value>模块“{0}”已延迟强签名</value>
+  </data>
+  <data name="ConfuserEngine_BeginModule_Processing_PEHeaders" xml:space="preserve">
+    <value>写PE标头...</value>
+  </data>
+</root>

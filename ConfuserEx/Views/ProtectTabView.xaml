@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ConfuserEx"
-                    xmlns:vm="clr-namespace:ConfuserEx.ViewModel">
+                    xmlns:vm="clr-namespace:ConfuserEx.ViewModel"
+                    xmlns:properties="clr-namespace:ConfuserEx.Properties">
     <DataTemplate DataType="{x:Type vm:ProtectTabVM}">
         <Grid Background="Transparent">
             <Grid.RowDefinitions>
@@ -16,8 +17,8 @@
 
             <ProgressBar x:Name="progress" Grid.Row="0" Grid.Column="0" Margin="5"
                          Value="{Binding Progress}" Minimum="0" Maximum="1" />
-            <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="Protect!" Command="{Binding ProtectCmd}" />
-            <Button Grid.Row="0" Grid.Column="2" Margin="5" Content="Cancel" Command="{Binding CancelCmd}" />
+            <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="{x:Static properties:Resources.ProtectTabProtectText}" Command="{Binding ProtectCmd}" />
+            <Button Grid.Row="0" Grid.Column="2" Margin="5" Content="{x:Static properties:Resources.ProtectTabCancelText}" Command="{Binding CancelCmd}" />
             <RichTextBox x:Name="log" Grid.Row="1" Grid.ColumnSpan="3" Margin="5" FontFamily="Consolas"
                          IsReadOnly="True" IsReadOnlyCaretVisible="True" local:Skin.RTBDocument="{Binding LogDocument}"
                          VerticalScrollBarVisibility="Visible" />

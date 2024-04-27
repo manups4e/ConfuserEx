@@ -21,11 +21,11 @@ namespace Confuser.Protections {
 		internal static object Targeted = new object();
 
 		public override string Name {
-			get { return "Reference Proxy Protection"; }
+			get { return Properties.Resources.ReferenceProxyProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection encodes and hides references to type/method/fields."; }
+			get { return Properties.Resources.ReferenceProxyProtectionDescription; }
 		}
 
 		public override string Id {

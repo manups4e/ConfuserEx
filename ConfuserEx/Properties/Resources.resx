@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ProjectModuleAssemblyNameLoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="AboutTabHeaderText" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AppPromptSaveMsg" xml:space="preserve">
+    <value>The current project has unsaved changes. Do you want to save them?</value>
+  </data>
+  <data name="AppOpenProjErrorMsg" xml:space="preserve">
+    <value>Invalid project!</value>
+  </data>
+  <data name="AppLoadPluginsMsg" xml:space="preserve">
+    <value>Failed to load plugin '</value>
+  </data>
+  <data name="ProjectTabHeaderText" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="ProtectTabHeaderText" xml:space="preserve">
+    <value>Protect!</value>
+  </data>
+  <data name="SettingsTabHeaderText" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ProjectTabAdvancedPluginsText" xml:space="preserve">
+    <value>Plugins :</value>
+  </data>
+  <data name="ProjectTabAdvancedProbePathsText" xml:space="preserve">
+    <value>Probe Paths :</value>
+  </data>
+  <data name="ProjectModuleAssemblyPathText" xml:space="preserve">
+    <value>Assembly Path:</value>
+  </data>
+  <data name="ProjectModuleSNKeyPathText" xml:space="preserve">
+    <value>Key Path:</value>
+  </data>
+  <data name="ProjectModuleSNKeyPasswordText" xml:space="preserve">
+    <value>Key Password:</value>
+  </data>
+  <data name="ProjectRuleTitle" xml:space="preserve">
+    <value>Edit rule...</value>
+  </data>
+  <data name="ProjectTabOutputDirectoryText" xml:space="preserve">
+    <value>Output Directory : </value>
+  </data>
+  <data name="ProjectTabBaseDirectoryText" xml:space="preserve">
+    <value>Base Directory : </value>
+  </data>
+  <data name="ProjectTabSeedEmptyPrompt" xml:space="preserve">
+    <value>Leave blank for random seed</value>
+  </data>
+  <data name="ProjectTabSeedText" xml:space="preserve">
+    <value>Seed : </value>
+  </data>
+  <data name="ProjectTabModulesEmptyPromptText" xml:space="preserve">
+    <value>Drag input modules here</value>
+  </data>
+  <data name="SettingsTabPackerText" xml:space="preserve">
+    <value>Packer : </value>
+  </data>
+  <data name="SettingsTabModulesText" xml:space="preserve">
+    <value>Modules : </value>
+  </data>
+  <data name="SettingsGlobalSettingsText" xml:space="preserve">
+    <value>&lt;Global settings&gt;</value>
+  </data>
+  <data name="ToolBarNewProjectText" xml:space="preserve">
+    <value>New project</value>
+  </data>
+  <data name="ToolBarOpenProjectText" xml:space="preserve">
+    <value>Open project</value>
+  </data>
+  <data name="ToolBarSaveProjectText" xml:space="preserve">
+    <value>Save project</value>
+  </data>
+  <data name="ToolBarStackTraceDecoderText" xml:space="preserve">
+    <value>Stack Trace Decoder</value>
+  </data>
+  <data name="StackTraceDecoderTitle" xml:space="preserve">
+    <value>Stack Trace Decoder</value>
+  </data>
+  <data name="ToolBarToolsText" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="ProjectTabGenerateDebugSymbolsText" xml:space="preserve">
+    <value>Generate Debug Symbols</value>
+  </data>
+  <data name="ProjectTabAdvancedTitle" xml:space="preserve">
+    <value>Advanced Settings...</value>
+  </data>
+  <data name="SettingsTabRulesText" xml:space="preserve">
+    <value>Rules : </value>
+  </data>
+  <data name="ProtectTabProtectText" xml:space="preserve">
+    <value>Protect!</value>
+  </data>
+  <data name="ProtectTabCancelText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="StackTraceDecoderSymbolMapText" xml:space="preserve">
+    <value>Symbol Map</value>
+  </data>
+  <data name="StackTraceDecoderPasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="StackTraceDecoderPassword2Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="StackTraceDecoderSymbolMap2Text" xml:space="preserve">
+    <value>Symbol Map:</value>
+  </data>
+  <data name="StackTraceDecoderDecodeText" xml:space="preserve">
+    <value>Decode!</value>
+  </data>
+  <data name="ProjectRulePatternText" xml:space="preserve">
+    <value>Pattern:</value>
+  </data>
+  <data name="ProjectRulePresetText" xml:space="preserve">
+    <value>Preset : </value>
+  </data>
+  <data name="ProjectRuleInheritProtectionsText" xml:space="preserve">
+    <value>Inherit protections</value>
+  </data>
+  <data name="ProjectRuleProtectionsText" xml:space="preserve">
+    <value>Protections:</value>
+  </data>
+  <data name="ProjectRuleDoneText" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="ProtectTabVM_Finish_at_elapsed" xml:space="preserve">
+    <value>at {0}, {1}:{2:d2} elapsed.</value>
+  </data>
+  <data name="ProtectTabVM_Finish_Finished" xml:space="preserve">
+    <value>Finished {0}</value>
+  </data>
+  <data name="ProtectTabVM_Finish_Failed" xml:space="preserve">
+    <value>Failed {0}</value>
+  </data>
+  <data name="ProjectModuleEnhancedStrongNameText" xml:space="preserve">
+    <value>Enhanced Strong Name</value>
+  </data>
+  <data name="ProjectModuleStrongNameText" xml:space="preserve">
+    <value>Strong Name</value>
+  </data>
+  <data name="ProjectModuleDoneText" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="ProjectModuleTitle" xml:space="preserve">
+    <value>Edit module '{0}'...</value>
+  </data>
+  <data name="ProjectTabVM_Remove_Msg" xml:space="preserve">
+    <value>Are you sure to remove selected modules?
+All settings specific to it would be lost!</value>
+  </data>
+  <data name="ProjectTabVM_AddModule_FileMsg" xml:space="preserve">
+    <value>File '{0}' does not exists!</value>
+  </data>
+</root>

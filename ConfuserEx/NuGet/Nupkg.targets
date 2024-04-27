@@ -1,0 +1,46 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <PropertyGroup Label="nupkg">
+    <PackageId>MSBuild.ConfuserEx.Plus</PackageId>
+    <PackageIcon>ico.png</PackageIcon>
+    <Authors>Andy Wu</Authors>
+    <PackageDescription>This package contains the integration of ConfuserEx into the MSBuild build procedure. It allows automatically obfuscating the assemblies during the build. And contains a large number of plug-ins, as well as Simplified Chinese language pack.</PackageDescription>
+    <RepositoryUrl>https://github.com/andywu188/ConfuserEx.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/andywu188/ConfuserEx</PackageProjectUrl>
+    <PackageTags>ConfuserEx;MSBuild;Task;targets</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <SuppressDependenciesWhenPacking>True</SuppressDependenciesWhenPacking>
+    <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
+    <IsTool>True</IsTool>
+    <NoWarn>$(NoWarn);NU5118;</NoWarn>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.config</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="$(OutputPath)*" Exclude="$(TargetPath)" />
+    </ItemGroup>
+  </Target>
+  
+  <ItemGroup>
+    <Content Include="NuGet\ico.png" Pack="True" PackagePath="\" />
+    <Content Include="NuGet\build\MSBuild.ConfuserEx.Plus.targets" Pack="True" PackagePath="build\" />
+    <Content Include="NuGet\content\Confuser.crproj.transform" Pack="True" PackagePath="content\" />
+  </ItemGroup>
+  
+  <Target Name="AddNugetFile" AfterTargets="Build">
+    <ItemGroup>
+      <None Include="$(OutputPath)Plugins/**" Pack="True" PackagePath="tools\Plugins\" />
+      <None Include="$(OutputPath)zh-Hans/**" Pack="True" PackagePath="tools\zh-Hans\" />
+    </ItemGroup>
+  </Target>
+  <Target Name="SetPackageProperty" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <Title>MSBuild.ConfuserEx.Plus</Title>
+      <Description>This package contains the integration of ConfuserEx into the MSBuild build procedure. It allows automatically obfuscating the assemblies during the build. And contains a large number of plug-ins, as well as Simplified Chinese language pack.</Description>
+    </PropertyGroup>
+  </Target>
+</Project>

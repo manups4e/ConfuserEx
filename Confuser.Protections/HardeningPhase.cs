@@ -17,7 +17,7 @@ namespace Confuser.Protections {
 		public override ProtectionTargets Targets => ProtectionTargets.Modules;
 
 		/// <inheritdoc />
-		public override string Name => "Hardening Phase";
+		public override string Name => Properties.Resources.HardeningPhaseName;
 
 		/// <inheritdoc />
 		public override bool ProcessAll => false;

@@ -5,6 +5,7 @@ using System.Linq;
 using Confuser.Core;
 using Confuser.Core.Services;
 using Confuser.Renamer.Analyzers;
+using Confuser.Renamer.Properties;
 using dnlib.DotNet;
 
 namespace Confuser.Renamer {
@@ -22,7 +23,7 @@ namespace Confuser.Renamer {
 		}
 
 		public override string Name {
-			get { return "Name analysis"; }
+			get { return Resources.AnalyzePhase_Name_Name_analysis; }
 		}
 
 		void ParseParameters(IDnlibDef def, ConfuserContext context, NameService service, ProtectionParameters parameters) {
@@ -33,8 +34,7 @@ namespace Confuser.Renamer {
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {
 			var service = (NameService)context.Registry.GetService<INameService>();
-
-			context.Logger.Debug("Building VTables & identifier list...");
+			context.Logger.Debug(Resources.AnalyzePhase_Execute_Building_VTables);
 
 			foreach (ModuleDef moduleDef in parameters.Targets.OfType<ModuleDef>())
 				moduleDef.EnableTypeDefFindCache = true;
@@ -56,7 +56,7 @@ namespace Confuser.Renamer {
 				context.CheckCancellation();
 			}
 
-			context.Logger.Debug("Analyzing...");
+			context.Logger.Debug(Resources.AnalyzePhaseAnalyzingText);
 			RegisterRenamers(context, service);
 			IList<IRenamer> renamers = service.Renamers;
 			foreach (IDnlibDef def in parameters.Targets.WithProgress(context.Logger)) {
@@ -106,35 +106,35 @@ namespace Confuser.Renamer {
 
 			if (wpf) {
 				var wpfAnalyzer = new WPFAnalyzer();
-				context.Logger.Debug("WPF found, enabling compatibility.");
+				context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_WPF_found);
 				service.Renamers.Add(wpfAnalyzer);
 				if (caliburn) {
-					context.Logger.Debug("Caliburn.Micro found, enabling compatibility.");
+					context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_Caliburn_Micro_found);
 					service.Renamers.Add(new CaliburnAnalyzer(wpfAnalyzer));
 				}
 			}
 
 			if (winforms) {
 				var winformsAnalyzer = new WinFormsAnalyzer();
-				context.Logger.Debug("WinForms found, enabling compatibility.");
+				context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_WinForms_found);
 				service.Renamers.Add(winformsAnalyzer);
 			}
 
 			if (json) {
 				var jsonAnalyzer = new JsonAnalyzer();
-				context.Logger.Debug("Newtonsoft.Json found, enabling compatibility.");
+				context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_Newtonsoft_Json_found);
 				service.Renamers.Add(jsonAnalyzer);
 			}
 
 			if (visualBasic) {
 				var vbAnalyzer = new VisualBasicRuntimeAnalyzer();
-				context.Logger.Debug("Visual Basic Embedded Runtime found, enabling compatibility.");
+				context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_Visual_Basic_Embedded_Runtime_found);
 				service.Renamers.Add(vbAnalyzer);
 			}
 
 			if (vsComposition) {
 				var analyzer = new VsCompositionAnalyzer();
-				context.Logger.Debug("Visual Studio Composition found, enabling compatibility.");
+				context.Logger.Debug(Resources.AnalyzePhase_RegisterRenamers_Visual_Studio_Composition_found);
 				service.Renamers.Add(analyzer);
 			}
 		}

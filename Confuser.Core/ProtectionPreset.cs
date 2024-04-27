@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Confuser.Core {
 	/// <summary>
@@ -20,4 +21,8 @@ namespace Confuser.Core {
 		/// <summary> The protection provides strongest security with possible incompatibility. </summary>
 		Maximum = 4
 	}
+
+	//public class Preset {
+	//	public List<>
+	//}
 }

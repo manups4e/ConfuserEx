@@ -18,11 +18,11 @@ namespace Confuser.Protections {
 		static readonly object HandlerKey = new object();
 
 		public override string Name {
-			get { return "Anti Tamper Protection"; }
+			get { return Properties.Resources.AntiTamperProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection ensures the integrity of application."; }
+			get { return Properties.Resources.AntiTamperProtectionDescription; }
 		}
 
 		public override string Id {
@@ -79,7 +79,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Anti-tamper helpers injection"; }
+				get { return Properties.Resources.AntiTamperProtectionInjectPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {
@@ -115,7 +115,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Anti-tamper metadata preparation"; }
+				get { return Properties.Resources.MDPhase_Name; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

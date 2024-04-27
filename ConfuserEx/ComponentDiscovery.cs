@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using Confuser.Core;
 
@@ -10,8 +11,17 @@ namespace ConfuserEx {
 			// Initialize the version resolver callback
 			ConfuserEngine.Version.ToString();
 
-			Assembly assembly = Assembly.LoadFile(ctx.PluginPath);
-			foreach (var module in assembly.GetLoadedModules())
+			var paths = new List<string>();
+			paths.Add(ctx.PluginPath);
+			var pluginDir = PluginDiscovery.Instance.GetBasePlugInsDir();
+			if (Directory.Exists(pluginDir)) {
+				var dlls = Directory.GetFiles(pluginDir, "*.dll");
+				paths.AddRange(dlls);
+			}
+
+			foreach (string path in paths) {
+				Assembly assembly = Assembly.LoadFile(path);
+				foreach (var module in assembly.GetLoadedModules())
 				foreach (var i in module.GetTypes()) {
 					if (i.IsAbstract || !PluginDiscovery.HasAccessibleDefConstructor(i))
 						continue;
@@ -25,6 +35,7 @@ namespace ConfuserEx {
 						ctx.AddPacker(Info.FromComponent(packer, ctx.PluginPath));
 					}
 				}
+			}
 		}
 
 		public static void LoadComponents(IList<ConfuserComponent> protections, IList<ConfuserComponent> packers, string pluginPath) {

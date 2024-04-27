@@ -10,11 +10,11 @@ namespace Confuser.Protections {
 		public const string _ServiceId = "Ki.Resources";
 
 		public override string Name {
-			get { return "Resources Protection"; }
+			get { return Properties.Resources.ResourceProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection encodes and compresses the embedded resources."; }
+			get { return Properties.Resources.ResourceProtectionDescription; }
 		}
 
 		public override string Id {

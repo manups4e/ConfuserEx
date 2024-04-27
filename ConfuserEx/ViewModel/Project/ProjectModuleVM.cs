@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Threading;
 using Confuser.Core.Project;
+using ConfuserEx.Properties;
 
 namespace ConfuserEx.ViewModel {
 	public class ProjectModuleVM : ViewModelBase, IViewModel<ProjectModule>, IRuleContainer {
@@ -120,7 +121,7 @@ namespace ConfuserEx.ViewModel {
 		}
 
 		void LoadAssemblyName() {
-			AssemblyName = "Loading...";
+			AssemblyName = Resources.ProjectModuleAssemblyNameLoadingText;
 			ThreadPool.QueueUserWorkItem(_ => {
 				try {
 					string path = System.IO.Path.Combine(parent.BaseDirectory, Path);

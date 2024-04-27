@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using Confuser.Core.Project;
 using Confuser.Core.Project.Patterns;
+using Confuser.Core.Properties;
 using dnlib.DotNet;
 
 namespace Confuser.Core {
@@ -167,7 +168,7 @@ namespace Confuser.Core {
 			}
 
 			foreach (var module in modules) {
-				context.Logger.InfoFormat("Loading '{0}'...", module.Item1.Path);
+				context.Logger.InfoFormat(Resources.Marker_MarkProject_Loading, module.Item1.Path);
 				Rules rules = ParseRules(proj, module.Item1, context);
 
 				context.Annotations.Set(module.Item2, SNKey, LoadSNKey(context, module.Item1.SNKeyPath == null ? null : Path.Combine(proj.BaseDirectory, module.Item1.SNKeyPath), module.Item1.SNKeyPassword));

@@ -10,7 +10,7 @@ namespace Confuser.Protections.TypeScrambler {
 
 		public override ProtectionTargets Targets => ProtectionTargets.Types | ProtectionTargets.Methods;
 
-		public override string Name => "Type scrambler";
+		public override string Name => Properties.Resources.ScramblePhaseName;
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {
 			if (context == null) throw new ArgumentNullException(nameof(context));

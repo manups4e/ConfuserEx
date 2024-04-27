@@ -28,7 +28,7 @@ namespace Confuser.Protections.Resources {
 			var writer = (ModuleWriterBase)sender;
 			if (e.Event == ModuleWriterEvent.MDBeginAddResources) {
 				ctx.Context.CheckCancellation();
-				ctx.Context.Logger.Debug("Encrypting resources...");
+				ctx.Context.Logger.Debug(Properties.Resources.MDPhase_EncryptingResourcesText);
 				bool hasPacker = ctx.Context.Packer != null;
 
 				List<EmbeddedResource> resources = ctx.Module.Resources.OfType<EmbeddedResource>().ToList();

@@ -4,8 +4,10 @@
         xmlns:local="clr-namespace:ConfuserEx"
         xmlns:vm="clr-namespace:ConfuserEx.ViewModel" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        Title="{Binding Path, StringFormat=Edit module \'{0}\'...}" Style="{StaticResource DarkWindow}"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:ConfuserEx.Properties"
+        mc:Ignorable="d"
+        Title="{Binding Path, StringFormat={x:Static properties:Resources.ProjectModuleTitle}}" Style="{StaticResource DarkWindow}"
         SizeToContent="WidthAndHeight" ShowInTaskbar="False" ResizeMode="NoResize" 
         d:DataContext="{d:DesignInstance vm:ProjectModuleVM}">
     <Grid Margin="5">
@@ -59,26 +61,26 @@
             <ColumnDefinition Width="35px" />
         </Grid.ColumnDefinitions>
 
-        <Label Content="Assembly Path:" Grid.Row="0" Grid.Column="0" />
+        <Label Content="{x:Static properties:Resources.ProjectModuleAssemblyPathText}" Grid.Row="0" Grid.Column="0" />
         <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                  Text="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  local:FileDragDrop.Command="{x:Static local:FileDragDrop.FileCmd}" />
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Strong Name" FontWeight="Bold" />
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.ProjectModuleStrongNameText}" FontWeight="Bold" />
         <Separator Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
 
-        <Label Content="Key Path:" Grid.Row="2" Grid.Column="0" />
+        <Label Content="{x:Static properties:Resources.ProjectModuleSNKeyPathText}" Grid.Row="2" Grid.Column="0" />
         <TextBox x:Name="StrongNameKeyPathTextBox" Grid.Row="2" Grid.Column="1"
                  Text="{Binding SNKeyPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  local:FileDragDrop.Command="{x:Static local:FileDragDrop.FileCmd}" />
         <Button Grid.Row="2" Grid.Column="2" Click="ChooseSNKey" Style="{StaticResource FilesystemSelectButton}" />
 
-        <Label Content="Key Password:" Grid.Row="3" Grid.Column="0" />
+        <Label Content="{x:Static properties:Resources.ProjectModuleSNKeyPasswordText}" Grid.Row="3" Grid.Column="0" />
         <TextBox x:Name="StrongNameKeyPasswordTextBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
                  Text="{Binding SNKeyPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  IsEnabled="{Binding SNKeyPath, Converter={StaticResource EmptyToBoolConverter}, ConverterParameter=false}"/>
 
-        <Label Grid.Row="4" Grid.Column="0" Content="Enhanced Strong Name" FontWeight="Bold" />
+        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.ProjectModuleEnhancedStrongNameText}" FontWeight="Bold" />
         <Separator Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
 
         <Label Content="Signature Key Path:" Grid.Row="5" Grid.Column="0" />
@@ -115,7 +117,7 @@
                  local:FileDragDrop.Command="{x:Static local:FileDragDrop.FileCmd}" />
         <Button Grid.Row="10" Grid.Column="2" Click="ChooseSNPublicKey" Style="{StaticResource FilesystemSelectButton}" />
 
-        <Button Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Content="Done"
+        <Button Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Content="{x:Static properties:Resources.ProjectModuleDoneText}"
                 Width="70" Margin="5" Click="Done" />
     </Grid>
 </Window>

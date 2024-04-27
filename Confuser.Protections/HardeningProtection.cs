@@ -5,10 +5,10 @@ namespace Confuser.Protections {
 	[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Instantiated by reflection.")]
 	internal sealed class HardeningProtection : Protection {
 		/// <inheritdoc />
-		public override string Name => "Protection Hardening";
+		public override string Name => Properties.Resources.HardeningProtectionName;
 
 		/// <inheritdoc />
-		public override string Description => "This component improves the protection code, making it harder to circumvent it.";
+		public override string Description => Properties.Resources.HardeningProtectionDescription;
 
 		/// <inheritdoc />
 		public override string Id => "harden";

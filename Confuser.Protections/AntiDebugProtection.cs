@@ -15,11 +15,11 @@ namespace Confuser.Protections {
 		public const string _FullId = "Ki.AntiDebug";
 
 		public override string Name {
-			get { return "Anti Debug Protection"; }
+			get { return Properties.Resources.AntiDebugProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection prevents the assembly from being debugged or profiled."; }
+			get { return Properties.Resources.AntiDebugProtectionDescription; }
 		}
 
 		public override string Id {
@@ -51,7 +51,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Anti-debug injection"; }
+				get { return Properties.Resources.AntiDebugProtectionAntiDebugPhaseName; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

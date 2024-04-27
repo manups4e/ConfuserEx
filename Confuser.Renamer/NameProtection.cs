@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Confuser.Core;
+using Confuser.Renamer.Properties;
 
 namespace Confuser.Renamer {
 	internal class NameProtection : Protection {
@@ -9,11 +10,11 @@ namespace Confuser.Renamer {
 		public const string _ServiceId = "Ki.Rename";
 
 		public override string Name {
-			get { return "Name Protection"; }
+			get { return Resources.NameProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection obfuscate the symbols' name so the decompiled source code can neither be compiled nor read."; }
+			get { return Resources.NameProtectionDescription; }
 		}
 
 		public override string Id {
@@ -48,7 +49,7 @@ namespace Confuser.Renamer {
 			}
 
 			public override string Name {
-				get { return "Export symbol map"; }
+				get { return Resources.NameProtectionExportMapPhaseName; }
 			}
 
 			public override bool ProcessAll {

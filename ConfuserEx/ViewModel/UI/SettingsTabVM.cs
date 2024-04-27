@@ -7,6 +7,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using Confuser.Core;
 using Confuser.Core.Project;
+using ConfuserEx.Properties;
 using ConfuserEx.Views;
 using GalaSoft.MvvmLight.CommandWpf;
 
@@ -17,7 +18,7 @@ namespace ConfuserEx.ViewModel {
 		int selectedRuleIndex;
 
 		public SettingsTabVM(AppVM app)
-			: base(app, "Settings") {
+			: base(app, Resources.SettingsTabHeaderText) {
 			app.PropertyChanged += (sender, e) => {
 				if (e.PropertyName == "Project")
 					InitProject();
@@ -36,7 +37,7 @@ namespace ConfuserEx.ViewModel {
 			get { return selectedList; }
 			set {
 				if (SetProperty(ref selectedList, value, "SelectedList"))
-					SelectedRuleIndex = value.Rules.Any() ? 0 : -1;
+					SelectedRuleIndex = value != null && value.Rules.Any() ? 0 : -1;
 			}
 		}
 

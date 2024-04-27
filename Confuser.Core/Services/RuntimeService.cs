@@ -12,7 +12,17 @@ namespace Confuser.Core.Services {
 			if (rtModule == null) {
 				LoadConfuserRuntimeModule();
 			}
-			return rtModule.Find(fullName, true);
+			var typeDef = rtModule.Find(fullName, true);
+			if (typeDef == null) {
+				var moduleDefs = PluginDiscovery.Instance.GetPluginModuleDef();
+				foreach (var moduleDef in moduleDefs) {
+					typeDef = moduleDef.Find(fullName, true);
+					if (typeDef != null) {
+						return typeDef;
+					}
+				}
+			}
+			return typeDef;
 		}
 
 		private void LoadConfuserRuntimeModule() {

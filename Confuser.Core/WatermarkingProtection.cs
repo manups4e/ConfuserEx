@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Confuser.Core.Properties;
 using Confuser.Core.Services;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;
@@ -9,11 +10,11 @@ namespace Confuser.Core {
 		public const string _FullId = "Cx.Watermark";
 
 		/// <inheritdoc />
-		public override string Name => "Watermarking";
+		public override string Name => Resources.WatermarkingProtectionName;
 
 		/// <inheritdoc />
 		public override string Description =>
-			"This applies a watermark to the assembly, showing that ConfuserEx protected the assembly. So people try to reverse the obfuscation know to just give up.";
+			Resources.WatermarkingProtectionDescription;
 
 		/// <inheritdoc />
 		public override string Id => _Id;
@@ -39,13 +40,13 @@ namespace Confuser.Core {
 			public override ProtectionTargets Targets => ProtectionTargets.Modules;
 
 			/// <inheritdoc />
-			public override string Name => "Apply watermark";
+			public override string Name => Resources.WatermarkingPhase_Name;
 
 			/// <inheritdoc />
 			protected internal override void Execute(ConfuserContext context, ProtectionParameters parameters) {
 				var marker = context.Registry.GetService<IMarkerService>();
 
-				context.Logger.Debug("Watermarking...");
+				context.Logger.Debug(Resources.WatermarkingPhase_Execute_Watermarking);
 				foreach (var module in parameters.Targets.OfType<ModuleDef>()) {
 					var attrRef = module.CorLibTypes.GetTypeRef("System", "Attribute");
 					var attrType = module.FindNormal("ConfusedByAttribute");

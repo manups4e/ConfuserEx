@@ -15,11 +15,11 @@ namespace Confuser.Protections {
 		public const string _FullId = "Ki.AntiDump";
 
 		public override string Name {
-			get { return "Anti Dump Protection"; }
+			get { return Properties.Resources.AntiDumpProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection prevents the assembly from being dumped from memory."; }
+			get { return Properties.Resources.AntiDumpProtectionDescription; }
 		}
 
 		public override string Id {
@@ -51,7 +51,7 @@ namespace Confuser.Protections {
 			}
 
 			public override string Name {
-				get { return "Anti-dump injection"; }
+				get { return Properties.Resources.AntiDumpPhase_Name; }
 			}
 
 			protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

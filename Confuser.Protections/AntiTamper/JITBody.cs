@@ -47,6 +47,8 @@ namespace Confuser.Protections.AntiTamper {
 			return GetFileLength();
 		}
 
+		public uint CalculateAlignment() => 0;
+
 		public void WriteTo(DataWriter writer) {
 			writer.WriteUInt32((uint)(Body.Length >> 2));
 			writer.WriteBytes(Body);
@@ -223,6 +225,8 @@ namespace Confuser.Protections.AntiTamper {
 		public uint GetVirtualSize() {
 			return GetFileLength();
 		}
+
+		public uint CalculateAlignment() => 0;
 
 		public void WriteTo(DataWriter writer) {
 			uint length = GetFileLength() - 4; // minus length field

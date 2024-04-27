@@ -19,7 +19,7 @@ namespace Confuser.Protections.ReferenceProxy {
 		}
 
 		public override string Name {
-			get { return "Encoding reference proxies"; }
+			get { return Properties.Resources.ReferenceProxyPhaseName; }
 		}
 
 		RPContext ParseParameters(MethodDef method, ConfuserContext context, ProtectionParameters parameters, RPStore store) {

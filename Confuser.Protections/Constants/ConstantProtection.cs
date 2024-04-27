@@ -16,11 +16,11 @@ namespace Confuser.Protections {
 		internal static readonly object ContextKey = new object();
 
 		public override string Name {
-			get { return "Constants Protection"; }
+			get { return Properties.Resources.ConstantProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection encodes and compresses constants in the code."; }
+			get { return Properties.Resources.ConstantProtectionDescription; }
 		}
 
 		public override string Id {

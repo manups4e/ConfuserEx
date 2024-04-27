@@ -65,7 +65,7 @@
     <Style x:Key="DarkWindow" TargetType="{x:Type Window}">
         <Setter Property="Background" Value="{StaticResource WindowBackground}" />
         <Setter Property="Foreground" Value="{StaticResource Foreground}" />
-        <Setter Property="FontFamily" Value="Open Sans" />
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />

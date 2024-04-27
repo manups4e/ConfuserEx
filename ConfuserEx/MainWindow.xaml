@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ConfuserEx"
+        xmlns:properties="clr-namespace:ConfuserEx.Properties"
         Title="{Binding Title}" Width="800" Height="600" Style="{StaticResource DarkWindow}">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,32 +14,32 @@
             <Button Command="{Binding NewProject}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{StaticResource New}" Margin="0,0,4,0" />
-                    <TextBlock Text="New project" VerticalAlignment="Center" />
+                    <TextBlock Text="{x:Static properties:Resources.ToolBarNewProjectText}" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenProject}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{StaticResource Open}" Margin="0,0,4,0" />
-                    <TextBlock Text="Open project" VerticalAlignment="Center" />
+                    <TextBlock Text="{x:Static properties:Resources.ToolBarOpenProjectText}" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button Command="{Binding SaveProject}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{StaticResource Save}" Margin="0,0,4,0" />
-                    <TextBlock Text="Save project" VerticalAlignment="Center" />
+                    <TextBlock Text="{x:Static properties:Resources.ToolBarSaveProjectText}" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button ContextMenuService.IsEnabled="False" Click="OpenMenu">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{StaticResource Tools}" Margin="0,0,4,0" />
-                    <TextBlock Text="Tools" VerticalAlignment="Center" />
+                    <TextBlock Text="{x:Static properties:Resources.ToolBarToolsText}" VerticalAlignment="Center" />
                     <Path Data="M 0.5 4 L 6.5 4 L 3.5 9 Z" Fill="{StaticResource Foreground}" Margin="4,0,0,0"
                           VerticalAlignment="Center" />
                 </StackPanel>
                 <Button.ContextMenu>
                     <ContextMenu
                         DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
-                        <MenuItem Header="Stack Trace Decoder" Command="{Binding Decode}">
+                        <MenuItem Header="{x:Static properties:Resources.ToolBarStackTraceDecoderText}" Command="{Binding Decode}">
                             <MenuItem.Icon>
                                 <Image Source="{StaticResource Decode}" />
                             </MenuItem.Icon>

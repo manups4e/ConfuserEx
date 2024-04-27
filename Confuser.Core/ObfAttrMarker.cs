@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Confuser.Core.Project;
 using Confuser.Core.Project.Patterns;
+using Confuser.Core.Properties;
 using dnlib.DotNet;
 
 namespace Confuser.Core {
@@ -330,7 +331,7 @@ namespace Confuser.Core {
 				}
 			}
 			foreach (var module in modules) {
-				context.Logger.InfoFormat("Loading '{0}'...", module.Item1.Path);
+				context.Logger.InfoFormat(Resources.ObfAttrMarker_MarkProject_Loading, module.Item1.Path);
 
 				Rules rules = ParseRules(proj, module.Item1, context);
 				MarkModule(module.Item1, module.Item2, rules, module == modules[0]);

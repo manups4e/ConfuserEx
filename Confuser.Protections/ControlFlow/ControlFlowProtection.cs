@@ -14,11 +14,11 @@ namespace Confuser.Protections {
 		public const string _ServiceId = "Ki.ControlFlow";
 
 		public override string Name {
-			get { return "Control Flow Protection"; }
+			get { return Properties.Resources.ControlFlowProtectionName; }
 		}
 
 		public override string Description {
-			get { return "This protection mangles the code in the methods so that decompilers cannot decompile the methods."; }
+			get { return Properties.Resources.ControlFlowProtectionDescription; }
 		}
 
 		public override string Id {

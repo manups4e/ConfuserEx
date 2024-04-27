@@ -23,7 +23,7 @@ namespace Confuser.Protections.ControlFlow {
 		}
 
 		public override string Name {
-			get { return "Control flow mangling"; }
+			get { return Properties.Resources.ControlFlowPhaseName; }
 		}
 
 		CFContext ParseParameters(MethodDef method, ConfuserContext context, ProtectionParameters parameters, RandomGenerator random, bool disableOpti) {

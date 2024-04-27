@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Confuser.Core.Properties;
+using dnlib.DotNet;
 
 namespace Confuser.Core {
 	/// <summary>
@@ -11,12 +13,29 @@ namespace Confuser.Core {
 		/// <summary>
 		///     The default plugin discovery service.
 		/// </summary>
-		internal static readonly PluginDiscovery Instance = new PluginDiscovery();
+		public static readonly PluginDiscovery Instance = new PluginDiscovery();
 
+		/// <summary>
+		/// default plugins dir
+		/// </summary>
+		private static string basePlugInsDir;
 		/// <summary>
 		///     Initializes a new instance of the <see cref="PluginDiscovery" /> class.
 		/// </summary>
-		protected PluginDiscovery() { }
+		protected PluginDiscovery() {
+			basePlugInsDir = Path.Combine(AppContext.BaseDirectory, "Plugins");
+			if (!Directory.Exists(basePlugInsDir)) {
+				Directory.CreateDirectory(basePlugInsDir);
+			}
+		}
+
+		/// <summary>
+		/// get default plugins dir
+		/// </summary>
+		/// <returns></returns>
+		public string GetBasePlugInsDir() {
+			return basePlugInsDir;
+		}
 
 		/// <summary>
 		///     Retrieves the available protection plugins.
@@ -64,7 +83,7 @@ namespace Confuser.Core {
 							protections.Add((Protection)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException("Failed to instantiate protection '" + i.Name + "'.", ex);
+							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_protection, i.Name), ex);
 						}
 					}
 					else if (typeof(Packer).IsAssignableFrom(i)) {
@@ -72,7 +91,7 @@ namespace Confuser.Core {
 							packers.Add((Packer)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException("Failed to instantiate packer '" + i.Name + "'.", ex);
+							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_packer, i.Name), ex);
 						}
 					}
 					else if (typeof(ConfuserComponent).IsAssignableFrom(i)) {
@@ -80,7 +99,7 @@ namespace Confuser.Core {
 							components.Add((ConfuserComponent)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException("Failed to instantiate component '" + i.Name + "'.", ex);
+							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_component, i.Name), ex);
 						}
 					}
 				}
@@ -103,7 +122,7 @@ namespace Confuser.Core {
 				AddPlugins(context, protections, packers, components, protAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException("Failed to load built-in protections.", ex);
+				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_built_in_protections, ex);
 			}
 
 			try {
@@ -111,7 +130,7 @@ namespace Confuser.Core {
 				AddPlugins(context, protections, packers, components, renameAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException("Failed to load renamer.", ex);
+				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_renamer, ex);
 			}
 
 			try {
@@ -119,19 +138,38 @@ namespace Confuser.Core {
 				AddPlugins(context, protections, packers, components, renameAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException("Failed to load dynamic cipher library.", ex);
+				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_dynamic_cipher_library, ex);
 			}
 
-			foreach (string pluginPath in context.Project.PluginPaths) {
+			#region load custom plugin
+			plugModule.Clear();
+			var paths = new List<string>();
+			if (Directory.Exists(basePlugInsDir)) {
+				var dlls = Directory.GetFiles(basePlugInsDir, "*.dll");
+				paths.AddRange(dlls);
+			}
+			paths.AddRange(context.Project.PluginPaths);
+			foreach (string pluginPath in paths) {
 				string realPath = Path.Combine(context.BaseDirectory, pluginPath);
 				try {
 					Assembly plugin = Assembly.LoadFile(realPath);
 					AddPlugins(context, protections, packers, components, plugin);
+					plugModule.Add(ModuleDefMD.Load(realPath, new ModuleCreationOptions() { TryToLoadPdbFromDisk = true }));
 				}
 				catch (Exception ex) {
-					context.Logger.WarnException("Failed to load plugin '" + pluginPath + "'.", ex);
+					context.Logger.WarnException(string.Format(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_plugin, pluginPath), ex);
 				}
 			}
+			#endregion
+		}
+
+		private List<ModuleDef> plugModule = new List<ModuleDef>();
+		/// <summary>
+		/// 获取插件模块
+		/// </summary>
+		/// <returns></returns>
+		public List<ModuleDef> GetPluginModuleDef() {
+			return plugModule;
 		}
 	}
 }

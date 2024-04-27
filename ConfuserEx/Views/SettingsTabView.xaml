@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ConfuserEx"
-                    xmlns:vm="clr-namespace:ConfuserEx.ViewModel">
+                    xmlns:vm="clr-namespace:ConfuserEx.ViewModel"
+                    xmlns:properties="clr-namespace:ConfuserEx.Properties">
     <DataTemplate DataType="{x:Type vm:SettingsTabVM}">
         <Grid Background="Transparent" x:Name="PART_SettingsTabGrid">
             <Grid.Resources>
@@ -21,7 +22,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="5">
-                <CheckBox Content="Packer : " VerticalAlignment="Center" HorizontalAlignment="Right"
+                <CheckBox Content="{x:Static properties:Resources.SettingsTabPackerText}" VerticalAlignment="Center" HorizontalAlignment="Right"
                           Margin="5,0,0,0" IsChecked="{Binding HasPacker}" />
                 <local:CompComboBox Width="300" Components="{Binding App.Project.Packers}" Margin="5,0,0,0"
                                     IsEnabled="{Binding HasPacker}" HorizontalAlignment="Left"
@@ -29,9 +30,9 @@
                                     SelectedComponent="{Binding App.Project.Packer.Id, Converter={StaticResource PackerConverter}, Mode=TwoWay}" />
             </StackPanel>
 
-            <Label Grid.Row="1" Grid.Column="0" Content="Modules : " VerticalAlignment="Bottom"
+            <Label Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.SettingsTabModulesText}" VerticalAlignment="Bottom"
                    HorizontalAlignment="Left" Margin="5,0,0,0" />
-            <Label Grid.Row="1" Grid.Column="1" Content="Rules : " VerticalAlignment="Bottom"
+            <Label Grid.Row="1" Grid.Column="1" Content="{x:Static properties:Resources.SettingsTabRulesText}" VerticalAlignment="Bottom"
                    HorizontalAlignment="Left" Margin="5,0,0,0" />
 
             <ListBox Grid.Row="2" Grid.Column="0" Margin="5" ItemsSource="{Binding ModulesView}"
@@ -42,7 +43,7 @@
                             <TextBlock.Text>
                                 <PriorityBinding>
                                     <Binding Path="SimpleName" />
-                                    <Binding Source="&lt;Global settings&gt;" />
+                                    <Binding Source="{x:Static properties:Resources.SettingsGlobalSettingsText}" />
                                 </PriorityBinding>
                             </TextBlock.Text>
                         </TextBlock>

@@ -17,7 +17,7 @@ namespace Confuser.Protections.Compress {
 		}
 
 		public override string Name {
-			get { return "Packer info extraction"; }
+			get { return Properties.Resources.ExtractPhaseName; }
 		}
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

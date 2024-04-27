@@ -5,9 +5,9 @@ namespace Confuser.Protections.TypeScrambler {
 	class TypeScrambleProtection : Protection {
 		public override ProtectionPreset Preset => ProtectionPreset.None;
 
-		public override string Name => "Type Scrambler";
+		public override string Name => Properties.Resources.TypeScrambleProtectionName;
 
-		public override string Description => "Replaces types with generics";
+		public override string Description => Properties.Resources.TypeScrambleProtectionDescription;
 
 		public override string Id => "typescramble";
 

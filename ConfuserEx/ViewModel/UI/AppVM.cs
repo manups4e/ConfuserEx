@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Xml;
 using Confuser.Core;
 using Confuser.Core.Project;
+using ConfuserEx.Properties;
 using GalaSoft.MvvmLight.CommandWpf;
 using Ookii.Dialogs.Wpf;
 
@@ -100,7 +101,7 @@ namespace ConfuserEx.ViewModel {
 		bool PromptSave() {
 			if (!Project.IsModified)
 				return true;
-			switch (MessageBox.Show("The current project has unsaved changes. Do you want to save them?", "ConfuserEx", MessageBoxButton.YesNoCancel, MessageBoxImage.Question)) {
+			switch (MessageBox.Show(Resources.AppPromptSaveMsg, "ConfuserEx", MessageBoxButton.YesNoCancel, MessageBoxImage.Question)) {
 				case MessageBoxResult.Yes:
 					return SaveProj();
 				case MessageBoxResult.No:
@@ -136,7 +137,7 @@ namespace ConfuserEx.ViewModel {
 					FileName = fileName;
 				}
 				catch {
-					MessageBox.Show("Invalid project!", "ConfuserEx", MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show(Resources.AppOpenProjErrorMsg, "ConfuserEx", MessageBoxButton.OK, MessageBoxImage.Error);
 				}
 			}
 		}
@@ -158,7 +159,7 @@ namespace ConfuserEx.ViewModel {
 					ComponentDiscovery.LoadComponents(Project.Protections, Project.Packers, plugin.Item);
 				}
 				catch {
-					MessageBox.Show("Failed to load plugin '" + plugin + "'.");
+					MessageBox.Show(Resources.AppLoadPluginsMsg + plugin + "'.");
 				}
 			}
 		}

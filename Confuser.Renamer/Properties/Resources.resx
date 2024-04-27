@@ -139,4 +139,46 @@
     <value>Invalid format string provided for the namespace format. Got: {0}</value>
     <comment>Exception message</comment>
   </data>
+  <data name="AnalyzePhase_Name_Name_analysis" xml:space="preserve">
+    <value>Name analysis</value>
+  </data>
+  <data name="AnalyzePhaseAnalyzingText" xml:space="preserve">
+    <value>Analyzing...</value>
+  </data>
+  <data name="NameProtectionDescription" xml:space="preserve">
+    <value>This protection obfuscate the symbols' name so the decompiled source code can neither be compiled nor read.</value>
+  </data>
+  <data name="NameProtectionName" xml:space="preserve">
+    <value>Name Protection</value>
+  </data>
+  <data name="NameProtectionExportMapPhaseName" xml:space="preserve">
+    <value>Export symbol map</value>
+  </data>
+  <data name="RenamePhaseName" xml:space="preserve">
+    <value>Renaming</value>
+  </data>
+  <data name="RenamePhaseRenamingText" xml:space="preserve">
+    <value>Renaming...</value>
+  </data>
+  <data name="AnalyzePhase_Execute_Building_VTables" xml:space="preserve">
+    <value>Building VTables &amp; identifier list...</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_WPF_found" xml:space="preserve">
+    <value>WPF found, enabling compatibility.</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_Caliburn_Micro_found" xml:space="preserve">
+    <value>Caliburn.Micro found, enabling compatibility.</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_WinForms_found" xml:space="preserve">
+    <value>WinForms found, enabling compatibility.</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_Newtonsoft_Json_found" xml:space="preserve">
+    <value>Newtonsoft.Json found, enabling compatibility.</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_Visual_Basic_Embedded_Runtime_found" xml:space="preserve">
+    <value>Visual Basic Embedded Runtime found, enabling compatibility.</value>
+  </data>
+  <data name="AnalyzePhase_RegisterRenamers_Visual_Studio_Composition_found" xml:space="preserve">
+    <value>Visual Studio Composition found, enabling compatibility.</value>
+  </data>
 </root>

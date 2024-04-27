@@ -21,7 +21,7 @@ namespace Confuser.Protections.Constants {
 		}
 
 		public override string Name {
-			get { return "Constants encoding"; }
+			get { return Properties.Resources.EncodePhaseConstantsName; }
 		}
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

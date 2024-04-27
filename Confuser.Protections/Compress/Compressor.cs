@@ -26,11 +26,11 @@ namespace Confuser.Protections {
 		public static readonly object ContextKey = new object();
 
 		public override string Name {
-			get { return "Compressing Packer"; }
+			get { return Properties.Resources.CompressorName; }
 		}
 
 		public override string Description {
-			get { return "This packer reduces the size of output."; }
+			get { return Properties.Resources.CompressorDescription; }
 		}
 
 		public override string Id {
@@ -50,7 +50,7 @@ namespace Confuser.Protections {
 		protected override void Pack(ConfuserContext context, ProtectionParameters parameters) {
 			var ctx = context.Annotations.Get<CompressorContext>(context, ContextKey);
 			if (ctx == null) {
-				context.Logger.Error("No executable module!");
+				context.Logger.Error(Properties.Resources.Compressor_Pack_No_executable_module);
 				throw new ConfuserException(null);
 			}
 
@@ -222,7 +222,7 @@ namespace Confuser.Protections {
 			}
 			compCtx.Deriver.Init(context, random);
 
-			context.Logger.Debug("Encrypting modules...");
+			context.Logger.Debug(Properties.Resources.Compressor_InjectStub_Encrypting_modules);
 
 			// Main
 			MethodDef entryPoint = defs.OfType<MethodDef>().Single(method => method.Name == "Main");

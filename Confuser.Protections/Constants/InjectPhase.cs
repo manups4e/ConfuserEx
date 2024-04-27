@@ -21,7 +21,7 @@ namespace Confuser.Protections.Constants {
 		}
 
 		public override string Name {
-			get { return "Constant encryption helpers injection"; }
+			get { return Properties.Resources.InjectPhaseConstantName; }
 		}
 
 		protected override void Execute(ConfuserContext context, ProtectionParameters parameters) {

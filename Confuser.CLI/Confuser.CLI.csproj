@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\ConfuserEx.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -25,5 +25,11 @@
   </ItemGroup>
   
   <Import Project="..\ConfuserEx.Common.targets" Condition="Exists('..\ConfuserEx.Common.targets')" />
-
+  <ItemGroup>
+    <FilesToCopy Include="$(TargetDir)*.*" />
+  </ItemGroup>
+  <Target Name="输出必需文件" AfterTargets="CopyFilesToOutputDirectory">
+    <MakeDir Directories="..\ConfuserEx\$(OutDir)" Condition="!Exists('..\ConfuserEx\$(OutDir)')" />
+    <Copy SourceFiles="@(FilesToCopy)" DestinationFolder="..\ConfuserEx\$(OutDir)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="True" />
+  </Target>
 </Project>
