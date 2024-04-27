@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Confuser.Core.Properties;
-using dnlib.DotNet;
 
 namespace Confuser.Core {
 	/// <summary>
@@ -13,29 +11,12 @@ namespace Confuser.Core {
 		/// <summary>
 		///     The default plugin discovery service.
 		/// </summary>
-		public static readonly PluginDiscovery Instance = new PluginDiscovery();
+		internal static readonly PluginDiscovery Instance = new PluginDiscovery();
 
-		/// <summary>
-		/// default plugins dir
-		/// </summary>
-		private static string basePlugInsDir;
 		/// <summary>
 		///     Initializes a new instance of the <see cref="PluginDiscovery" /> class.
 		/// </summary>
-		protected PluginDiscovery() {
-			basePlugInsDir = Path.Combine(AppContext.BaseDirectory, "Plugins");
-			if (!Directory.Exists(basePlugInsDir)) {
-				Directory.CreateDirectory(basePlugInsDir);
-			}
-		}
-
-		/// <summary>
-		/// get default plugins dir
-		/// </summary>
-		/// <returns></returns>
-		public string GetBasePlugInsDir() {
-			return basePlugInsDir;
-		}
+		protected PluginDiscovery() { }
 
 		/// <summary>
 		///     Retrieves the available protection plugins.
@@ -50,18 +31,16 @@ namespace Confuser.Core {
 			components = new List<ConfuserComponent>();
 			GetPluginsInternal(context, protections, packers, components);
 		}
-
 		/// <summary>
 		///     Determines whether the specified type has an accessible default constructor.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type has an accessible default constructor; otherwise, <c>false</c>.</returns>
 		public static bool HasAccessibleDefConstructor(Type type) {
-			ConstructorInfo ctor = type.GetConstructor(Type.EmptyTypes);
+			var ctor = type.GetConstructor(Type.EmptyTypes);
 			if (ctor == null) return false;
 			return ctor.IsPublic;
 		}
-
 		/// <summary>
 		///     Adds plugins in the assembly to the protection list.
 		/// </summary>
@@ -73,17 +52,16 @@ namespace Confuser.Core {
 		protected static void AddPlugins(
 			ConfuserContext context, IList<Protection> protections, IList<Packer> packers,
 			IList<ConfuserComponent> components, Assembly asm) {
-			foreach(var module in asm.GetLoadedModules())
+			foreach (var module in asm.GetLoadedModules())
 				foreach (var i in module.GetTypes()) {
 					if (i.IsAbstract || !HasAccessibleDefConstructor(i))
 						continue;
-
 					if (typeof(Protection).IsAssignableFrom(i)) {
 						try {
 							protections.Add((Protection)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_protection, i.Name), ex);
+							context.Logger.ErrorException("Failed to instantiate protection '" + i.Name + "'.", ex);
 						}
 					}
 					else if (typeof(Packer).IsAssignableFrom(i)) {
@@ -91,7 +69,7 @@ namespace Confuser.Core {
 							packers.Add((Packer)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_packer, i.Name), ex);
+							context.Logger.ErrorException("Failed to instantiate packer '" + i.Name + "'.", ex);
 						}
 					}
 					else if (typeof(ConfuserComponent).IsAssignableFrom(i)) {
@@ -99,13 +77,12 @@ namespace Confuser.Core {
 							components.Add((ConfuserComponent)Activator.CreateInstance(i));
 						}
 						catch (Exception ex) {
-							context.Logger.ErrorException(string.Format(Resources.PluginDiscovery_AddPlugins_Failed_to_instantiate_component, i.Name), ex);
+							context.Logger.ErrorException("Failed to instantiate component '" + i.Name + "'.", ex);
 						}
 					}
 				}
 			context.CheckCancellation();
 		}
-
 		/// <summary>
 		///     Retrieves the available protection plugins.
 		/// </summary>
@@ -118,58 +95,39 @@ namespace Confuser.Core {
 			IList<Packer> packers, IList<ConfuserComponent> components) {
 			protections.Add(new WatermarkingProtection());
 			try {
-				Assembly protAsm = Assembly.Load("Confuser.Protections");
+				var protAsm = Assembly.Load("Confuser.Protections");
 				AddPlugins(context, protections, packers, components, protAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_built_in_protections, ex);
+				context.Logger.WarnException("Failed to load built-in protections.", ex);
 			}
 
 			try {
-				Assembly renameAsm = Assembly.Load("Confuser.Renamer");
+				var renameAsm = Assembly.Load("Confuser.Renamer");
 				AddPlugins(context, protections, packers, components, renameAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_renamer, ex);
+				context.Logger.WarnException("Failed to load renamer.", ex);
 			}
 
 			try {
-				Assembly renameAsm = Assembly.Load("Confuser.DynCipher");
+				var renameAsm = Assembly.Load("Confuser.DynCipher");
 				AddPlugins(context, protections, packers, components, renameAsm);
 			}
 			catch (Exception ex) {
-				context.Logger.WarnException(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_dynamic_cipher_library, ex);
+				context.Logger.WarnException("Failed to load dynamic cipher library.", ex);
 			}
 
-			#region load custom plugin
-			plugModule.Clear();
-			var paths = new List<string>();
-			if (Directory.Exists(basePlugInsDir)) {
-				var dlls = Directory.GetFiles(basePlugInsDir, "*.dll");
-				paths.AddRange(dlls);
-			}
-			paths.AddRange(context.Project.PluginPaths);
-			foreach (string pluginPath in paths) {
+			foreach (string pluginPath in context.Project.PluginPaths) {
 				string realPath = Path.Combine(context.BaseDirectory, pluginPath);
 				try {
-					Assembly plugin = Assembly.LoadFile(realPath);
+					var plugin = Assembly.LoadFile(realPath);
 					AddPlugins(context, protections, packers, components, plugin);
-					plugModule.Add(ModuleDefMD.Load(realPath, new ModuleCreationOptions() { TryToLoadPdbFromDisk = true }));
 				}
 				catch (Exception ex) {
-					context.Logger.WarnException(string.Format(Resources.PluginDiscovery_GetPluginsInternal_Failed_to_load_plugin, pluginPath), ex);
+					context.Logger.WarnException("Failed to load plugin '" + pluginPath + "'.", ex);
 				}
 			}
-			#endregion
-		}
-
-		private List<ModuleDef> plugModule = new List<ModuleDef>();
-		/// <summary>
-		/// 获取插件模块
-		/// </summary>
-		/// <returns></returns>
-		public List<ModuleDef> GetPluginModuleDef() {
-			return plugModule;
 		}
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using System.IO;
 using dnlib.DotNet;
 
 namespace Confuser.Core.Services {
@@ -12,17 +10,7 @@ namespace Confuser.Core.Services {
 			if (rtModule == null) {
 				LoadConfuserRuntimeModule();
 			}
-			var typeDef = rtModule.Find(fullName, true);
-			if (typeDef == null) {
-				var moduleDefs = PluginDiscovery.Instance.GetPluginModuleDef();
-				foreach (var moduleDef in moduleDefs) {
-					typeDef = moduleDef.Find(fullName, true);
-					if (typeDef != null) {
-						return typeDef;
-					}
-				}
-			}
-			return typeDef;
+			return rtModule.Find(fullName, true);
 		}
 
 		private void LoadConfuserRuntimeModule() {
